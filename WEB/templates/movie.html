@@ -1,0 +1,24 @@
+$def with (movie)
+<h4><a href="/">Return to the first page</a></h4>
+<h1>$movie.title</h1>
+<hr>
+
+<img src="/static/$(movie.id).jpg">
+
+<p>year:$movie.year</p>
+
+<p>country:$movie.countries</p>
+
+<p>summary:$movie.summary</p>
+
+<p>rate:$movie.rating</p>
+
+<p>director:$movie.directors</p>
+
+<p>genre:$movie.genres</p>
+
+$ casts=movie.casts.split(',')
+<p>cast:
+$for cast in casts:
+	<a href="/cast/$cast">$cast</a>
+</p>
